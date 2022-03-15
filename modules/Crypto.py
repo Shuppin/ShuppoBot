@@ -43,8 +43,6 @@ class Crypto(commands.Cog):
         info = coins['coins'][0]
 
         coinInfo = self.evalCoinGecko(f"https://api.coingecko.com/api/v3/coins/{info['id']}")
-        print(f"requestsed 'https://api.coingecko.com/api/v3/coins/{coin}'")
-        print(coinInfo['market_cap_rank'])
 
         avg_colour = self.getImageMean(info['large'])
 

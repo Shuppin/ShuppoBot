@@ -30,9 +30,9 @@ if __name__ == '__main__':
   activity = discord.Activity(type=discord.ActivityType.playing, name="uptime testing")
   bot = commands.Bot(command_prefix=getPrefix,activity=activity, status=discord.Status.online, intents=intents)
 
-  for filename in os.listdir('./cogs'):
+  for filename in os.listdir('./modules'):
     if filename.endswith(".py"):
-      bot.load_extension(f"cogs.{filename[:-3]}")
+      bot.load_extension(f"modules.{filename[:-3]}")
 
   #server.keep_alive()
   bot.run(os.environ['TOKEN'])
