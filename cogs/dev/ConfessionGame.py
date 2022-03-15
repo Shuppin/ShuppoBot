@@ -112,7 +112,7 @@ class ConfessionGame(commands.Cog):
       embed=discord.Embed(title="❓ Which server do you want to send to?", description=message + "Please provide the name of the server that you would like to submit your confession to\nServer not here? Make sure the server you're trying to submit has a confession channel setup", color=0xd95757)
       await ctx.send(embed=embed)
 
-      await asyncio.sleep(0.1) # Short asyncronous sleep to avoid detecting our own message
+      await asyncio.sleep(0.1)
 
       serverResponse = await self.bot.wait_for("message", check=check)
 
@@ -125,7 +125,7 @@ class ConfessionGame(commands.Cog):
         embed=discord.Embed(title="💬 Enter your confession", description="Please enter the confession you would like to send below.\n\nThis will be published to the server you selected for people to guess.", color=0xd95757)
         await ctx.send(embed=embed)
 
-        await asyncio.sleep(0.1) # Short asyncronous sleep to avoid detecting our own message
+        await asyncio.sleep(0.1)
 
         confession = await self.bot.wait_for("message", check=check)
 
@@ -133,7 +133,7 @@ class ConfessionGame(commands.Cog):
 
         await ctx.send(embed=embed)
 
-        await asyncio.sleep(0.1) # Short asyncronous sleep to avoid detecting our own message
+        await asyncio.sleep(0.1)
 
         submitResponse = await self.bot.wait_for("message", check=check)
 
