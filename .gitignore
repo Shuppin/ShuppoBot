@@ -1,4 +1,7 @@
 *.json
-__pychache__/
+**/*.json
+**/__pychache__
 *.py[cod]
 *$py.class
+*.disabled
+**/*.disabled
