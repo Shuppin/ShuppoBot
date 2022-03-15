@@ -1,5 +1,3 @@
-#import requests
-
 import nextcord as discord
 from nextcord.ext import commands
 
@@ -9,8 +7,8 @@ from io import BytesIO
 import time
 
 import requests
-import numpy as np # install this
-from PIL import Image # and this
+import numpy as np
+from PIL import Image
 
 class Crypto(commands.Cog):
 
