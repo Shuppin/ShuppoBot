@@ -1,0 +1,6 @@
+*.json
+__pychache__/
+*.py[cod]
+*$py.class
+*.lock
+*.toml

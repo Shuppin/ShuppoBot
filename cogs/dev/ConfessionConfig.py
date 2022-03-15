@@ -1,6 +1,6 @@
-import discord
-from discord.ext import commands
-from discord.ext.commands import has_permissions
+import nextcord as discord
+from nextcord.ext import commands
+from nextcord.ext.commands import has_permissions
 
 import json
 import os
@@ -8,15 +8,10 @@ import os
 dev = "Shuppin#0001"
 
 
-class ConfessionGame(commands.Cog):
+class ConfessionConfig(commands.Cog):
   
   def __init__(self, bot):
     self.bot = bot
-
-  @commands.Cog.listener()
-  async def on_ready(self):
-    print("Module 'ConfessionGame' initialised")
-
 
   @commands.guild_only()
   @commands.command(aliases=["setChannel","setchannel","setconfessionChannel","setConfessionchannel", "setconfessionchannel"])
@@ -117,6 +112,7 @@ class ConfessionGame(commands.Cog):
       await ctx.send("Please specify a channel to set")
 
 def setup(client):
-  client.add_cog(ConfessionGame(client))
+  client.add_cog(ConfessionConfig(client))
+  print(f"Module '{os.path.basename(__file__)}' initialised")
 
 

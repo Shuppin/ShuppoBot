@@ -1,20 +1,14 @@
-# ---------------------------------------------------------- Imports
-import discord
-from discord.ext import commands
+import nextcord as discord
+from nextcord.ext import commands
 
 import os
-import random
 import json
 
-from revive import keep_alive
+import server
 
-# ---------------------------------------------------------- Variables
-
-defaultPrefix = '!'
+defaultPrefix = '-'
 
 dev = "Shuppin#0001"
-
-# ---------------------------------------------------------- Initialisation
 
 def getPrefix(bot, message):
 
@@ -29,68 +23,18 @@ def getPrefix(bot, message):
     else:
       return defaultPrefix
 
-activity = discord.Activity(type=discord.ActivityType.listening, name="your commands.")
-bot = commands.Bot(command_prefix=getPrefix,activity=activity, status=discord.Status.online)
-
-# ---------------------------------------------------------- Event Handling
-
-@bot.event
-async def on_ready():
-  print(f"Logged in as {bot.user}")
-
-@bot.event
-async def on_message(message):
-  if message.author == bot.user:
-    return
-
-  if "<@!851132992289898508>" in message.content or "<@851132992289898508>" in message.content:
-    responses = ["Hey, do you Want know how to keep an idiot waiting….I’ll tell you tomorrow.", "I fail to see why I should give two hoots about your opinion", "You can do better than that? Surely.", "Do you not have a smarter choice of words than that?", "Well that's not very nice :(", "After all I have done for you? You treat me as such a low being?"]
-
-    if any(word in message.content for word in ["bad", "trash", "stupid", "idiot"]):
-        await message.channel.send(random.choice(responses))
-
-  await bot.process_commands(message)
-
-@bot.event
-async def on_command_error(ctx, error):
-  if isinstance(error, commands.errors.NoPrivateMessage):
-    await ctx.send("You can't perform that command here!")
-
-@bot.event
-async def on_guild_join(guild):
-
-  with open("prefrences.json", "r") as f:
-    prefs = json.load(f)
-
-  prefs[str(guild.id)] = {}
-  prefs[str(guild.id)]['prefix'] = defaultPrefix
-  prefs[str(guild.id)]['confessionChannel'] = None
-
-  with open("prefrences.json", "w") as f:
-    json.dump(prefs, f, indent=4)
-
-@bot.event
-async def on_guild_remove(guild):
-
-  with open("prefrences.json", "r") as f:
-    prefs = json.load(f)
-
-  try:
-    del prefs[str(guild.id)]
-  except KeyError:
-    print(f"Error: File '{os.path.basename(__file__)}' in on_guild_remove() | '{guild.name}' ({guild.id}) attempted to remove guild information where none exists")
-
-  with open("prefrences.json", "w") as f:
-    json.dump(prefs, f, indent=4)
-
-# ---------------------------------------------------------- Execution
-
 if __name__ == '__main__':
+
+  intents = discord.Intents.default()
+  intents.members = True
+  activity = discord.Activity(type=discord.ActivityType.playing, name="uptime testing")
+  bot = commands.Bot(command_prefix=getPrefix,activity=activity, status=discord.Status.online, intents=intents)
+
   for filename in os.listdir('./cogs'):
     if filename.endswith(".py"):
       bot.load_extension(f"cogs.{filename[:-3]}")
 
-  #keep_alive()
+  #server.keep_alive()
   bot.run(os.environ['TOKEN'])
 
 

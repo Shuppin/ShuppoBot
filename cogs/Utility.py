@@ -1,6 +1,6 @@
-import discord
-from discord.ext import commands
-from discord.ext.commands import has_permissions
+from nextcord.ext import commands
+from nextcord.ext.commands import has_permissions
+from nextcord import Embed, Emoji
 
 import asyncio
 import json
@@ -10,10 +10,6 @@ class Utility(commands.Cog):
 
   def __init__(self, bot):
     self.bot = bot
-
-  @commands.Cog.listener()
-  async def on_ready(self):
-    print("Module 'Utiliy' initialised")
 
   @commands.guild_only()
   @commands.command()
@@ -25,7 +21,7 @@ class Utility(commands.Cog):
       responses.append(self.bot.latency*1000)
       await asyncio.sleep(0.1)
 
-    await ctx.send(f"Pong!\nResponse times: Minimum = {round(min(responses),3)}ms, Maximum= {round(max(responses),3)}ms, Average={round(sum(responses)/len(responses),3)}ms")
+    await ctx.send(f"Pong!\nResponse times:  {round(min(responses),3)}ms/{round(max(responses),3)}ms/{round(sum(responses)/len(responses),3)}ms")
 
 
   @commands.guild_only()
@@ -49,8 +45,11 @@ class Utility(commands.Cog):
 
   @changeprefix.error
   async def changeprefix_error(self, ctx, error):
+    if isinstance(error, commands.errors.NoPrivateMessage):
+      return
     if isinstance(error, commands.CheckFailure):
       await ctx.send("Missing permission 'Administrator'")
 
 def setup(client):
   client.add_cog(Utility(client))
+  print(f"Module '{os.path.basename(__file__)}' initialised")
