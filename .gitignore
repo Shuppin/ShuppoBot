@@ -5,3 +5,5 @@
 *$py.class
 *.disabled
 **/*.disabled
+*.lock
+*.toml
