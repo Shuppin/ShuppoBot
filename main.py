@@ -36,36 +36,3 @@ if __name__ == '__main__':
 
   #server.keep_alive()
   bot.run(os.environ['TOKEN'])
-
-
-# ---------------------------------------------------------- To do
-#
-# Confession Bot
-#
-# Functionality
-#
-#    JSON Guild prefrences ✅
-#    Permission Handling ✅
-#    DM responses
-#      Basic DM Handling 😐
-# 
-# Utility Commands ✅
-# 
-#   ping ✅
-#   changeprefix ✅
-# 
-# Game commands
-# 
-#  Setup
-#   setChannel ✅
-#   removeChannel ✅
-#   getChannel ✅
-#  
-#  Channel specific
-#   confession			- DMs?
-#   removeConfession (user)
-#   removeConfession (admin)
-# 
-#  Interaction
-#    guess
-#
