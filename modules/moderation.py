@@ -1,5 +1,5 @@
-from nextcord.ext import commands
-from nextcord.ext.commands import has_permissions
+from discord.ext import commands
+from discord.ext.commands import has_permissions
 import os
 
 class Moderation(commands.Cog):
@@ -10,10 +10,9 @@ class Moderation(commands.Cog):
   @commands.guild_only()
   @commands.command()
   @has_permissions(administrator=True)
-  async def purge(self, ctx, len):
+  async def purge(self, ctx, amount):
     
     pass
-
 
 def setup(client):
   client.add_cog(Moderation(client))

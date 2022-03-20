@@ -1,5 +1,5 @@
-import nextcord as discord
-from nextcord.ext import commands
+import discord
+from discord.ext import commands
 
 import os
 import json
@@ -23,22 +23,16 @@ def getPrefix(bot, message):
     else:
       return defaultPrefix
 
-def init():
-  
-  intents = discord.Intents.default()
-  intents.members = True
-  activity = discord.Activity(type=discord.ActivityType.playing, name="crypto")
-  bot = commands.Bot(command_prefix=getPrefix,activity=activity, status=discord.Status.online, intents=intents)
 
-  for filename in os.listdir('./modules'):
-    if filename.endswith(".py"):
-      bot.load_extension(f"modules.{filename[:-3]}")
+intents = discord.Intents.default()
+intents.members = True
+activity = discord.Activity(type=discord.ActivityType.playing, name="crypto")
+bot = commands.Bot(command_prefix=getPrefix,activity=activity, status=discord.Status.online, intents=intents)
 
-  #server.keep_alive()
-  return bot
+for filename in os.listdir('./modules'):
+  if filename.endswith(".py"):
+    bot.load_extension(f"modules.{filename[:-3]}")
 
-if __name__ == '__main__':
-  
-  bot = init()
+#server.keep_alive()
 
-  bot.run(os.environ['TOKEN'])
+bot.run(os.environ['TOKEN'])
