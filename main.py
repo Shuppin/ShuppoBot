@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
   intents = discord.Intents.default()
   intents.members = True
-  activity = discord.Activity(type=discord.ActivityType.playing, name="uptime testing")
+  activity = discord.Activity(type=discord.ActivityType.playing, name="crypto")
   bot = commands.Bot(command_prefix=getPrefix,activity=activity, status=discord.Status.online, intents=intents)
 
   for filename in os.listdir('./modules'):

@@ -50,12 +50,16 @@ class Crypto(commands.Cog):
         hex_colour = int(hex_colour, 0)
 
         endtime = time.time()
-
-
-        description_txt = f"`Rank by market cap: {coinInfo['market_cap_rank']}\nSome other info`"
+          
+        description_txt = f"**Overall rank:** {coinInfo['coingecko_rank']}\n**Rank by market cap:** {coinInfo['market_cap_rank']}\n**Price (USD→{info['symbol'].upper()}):** ${'{:,}'.format(coinInfo['market_data']['current_price']['usd'])} "
         footer = f"Searched {'{:,}'.format(len(coinList))} currencies is {round((endtime-starttime)*1000,2)}ms"
 
-        embed=discord.Embed(title=f"{info['name']} ({info['symbol']})",       description=description_txt, color=hex_colour) 
+        if len(coinInfo['links']['homepage']) > 1:
+          embed=discord.Embed(title=f"{info['name']} ({info['symbol']})",       description=description_txt, color=hex_colour, url=coinInfo['links']['homepage'][0])
+        else:
+          embed=discord.Embed(title=f"{info['name']} ({info['symbol']})",       description=description_txt, color=hex_colour)
+
+         
         embed.set_thumbnail(url=info['thumb'])
         embed.set_footer(text=footer)
         await message.delete()
@@ -91,7 +95,7 @@ class Crypto(commands.Cog):
     content = response.content.decode('utf-8')
     contentDict = json.loads(content)
     return contentDict
-    
+
 
 def setup(client):
   coinGecko = requests.get('https://api.coingecko.com/api/v3/ping')
