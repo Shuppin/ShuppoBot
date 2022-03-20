@@ -23,8 +23,8 @@ def getPrefix(bot, message):
     else:
       return defaultPrefix
 
-if __name__ == '__main__':
-
+def init():
+  
   intents = discord.Intents.default()
   intents.members = True
   activity = discord.Activity(type=discord.ActivityType.playing, name="crypto")
@@ -35,4 +35,10 @@ if __name__ == '__main__':
       bot.load_extension(f"modules.{filename[:-3]}")
 
   #server.keep_alive()
+  return bot
+
+if __name__ == '__main__':
+  
+  bot = init()
+
   bot.run(os.environ['TOKEN'])

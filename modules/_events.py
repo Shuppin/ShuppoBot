@@ -1,4 +1,5 @@
 from nextcord.ext import commands
+import nextcord
 
 import json
 import os
@@ -13,8 +14,14 @@ class _events(commands.Cog):
 
   @commands.Cog.listener()
   async def on_ready(self):
-    print(f"Logged in as {self.bot.user}")
-
+    print(f'Logged in as "{self.bot.user.name}" ({self.bot.user.id})')
+    print("Running on nextcord v" + nextcord.__version__)
+    print('------')
+    print(f'Servers connected to ({len(self.bot.guilds)} servers):')
+    for guild in self.bot.guilds:
+        print(f'{guild.name} ({guild.id}) - {guild.member_count} Members')
+    print('------')
+  
   @commands.Cog.listener()
   async def on_message(self, message):
     if message.author == self.bot.user:
