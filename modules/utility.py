@@ -1,6 +1,6 @@
-from nextcord.ext import commands
-from nextcord.ext.commands import has_permissions
-from nextcord import Embed, Emoji
+from discord.ext import commands
+from discord.ext.commands import has_permissions
+from discord.commands import slash_command
 
 import asyncio
 import json
@@ -10,6 +10,9 @@ class Utility(commands.Cog):
 
   def __init__(self, bot):
     self.bot = bot
+
+  async def nothing(self):
+    pass
 
   @commands.guild_only()
   @commands.command()
@@ -50,6 +53,16 @@ class Utility(commands.Cog):
     if isinstance(error, commands.CheckFailure):
       await ctx.send("Missing permission 'Administrator'")
 
+class Utility_sc(commands.cog):
+  
+  def __init__(self, bot):
+    self.bot = bot
+
+  @slash_command()
+  async def hi(self, ctx):
+    await ctx.respond("Hi, this is a global slash command from a cog!")
+
 def setup(client):
   client.add_cog(Utility(client))
+  client.add_cog(Utility_sc(client))
   print(f"Module '{os.path.basename(__file__)}' initialised")
