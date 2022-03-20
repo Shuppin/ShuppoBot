@@ -53,16 +53,10 @@ class Utility(commands.Cog):
     if isinstance(error, commands.CheckFailure):
       await ctx.send("Missing permission 'Administrator'")
 
-class Utility_sc(commands.cog):
-  
-  def __init__(self, bot):
-    self.bot = bot
-
   @slash_command()
   async def hi(self, ctx):
     await ctx.respond("Hi, this is a global slash command from a cog!")
 
 def setup(client):
   client.add_cog(Utility(client))
-  client.add_cog(Utility_sc(client))
   print(f"Module '{os.path.basename(__file__)}' initialised")
