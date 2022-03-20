@@ -11,6 +11,7 @@ class Moderation(commands.Cog):
   @commands.command()
   @has_permissions(administrator=True)
   async def purge(self, ctx, len):
+    
     pass
 
 
