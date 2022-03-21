@@ -6,11 +6,13 @@
 	</a>
 	  &nbsp;
 	<a href="https://discord.gg/yjy2F9YWWG">
-		<img src="https://img.shields.io/discord/953217201496793108?label=Discord" height="21" title="Open Source"/>&nbsp;
-		<a href="https://discord.gg/yjy2F9YWWG">
-		<img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103" height="21" title="Open Source"/>
-		&nbsp;
-	</a>
+		<img src="https://img.shields.io/discord/953217201496793108?label=Discord" height="21" title="Open Source"/>
+  </a>
+    &nbsp;
+  <a href="https://discord.gg/yjy2F9YWWG">
+    <img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103" height="21" title="Open Source"/>
+  </a>
+  &nbsp;
 </p>
 
 # Shuppo Bot
