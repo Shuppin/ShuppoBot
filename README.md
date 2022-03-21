@@ -2,17 +2,15 @@
 <!-- Badges -->
 <p align="right">
 	<a href="https://opensource.org/licenses/MIT">
-		<img src="https://img.shields.io/badge/License-MIT-green.svg" height="21" title="License">&nbsp;
+		<img src="https://img.shields.io/badge/License-MIT-green.svg" height="21" title="License">
 	</a>
 	  &nbsp;
 	<a href="https://discord.gg/yjy2F9YWWG">
 		<img src="https://img.shields.io/discord/953217201496793108?label=Discord" height="21" title="Discord"/>
   </a>
     &nbsp;
-  <a href="https://discord.gg/yjy2F9YWWG">
     <img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103" height="21" title="Open Source"/>
-  </a>
-  &nbsp;
+    &nbsp;
 </p>
 
 # Shuppo Bot
