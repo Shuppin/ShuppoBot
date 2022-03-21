@@ -1,12 +1,12 @@
 
 <!-- Badges -->
 
-<img src="https://badgen.net/github/commits/Shuppin/ShuppoBot/main">
+<img src="https://badgen.net/github/commits/Shuppin/ShuppoBot/main"/>&nbsp;
 &nbsp;
-<img src="https://badgen.net/github/last-commit/Shuppin/ShuppoBot/main">
+<img src="https://badgen.net/github/last-commit/Shuppin/ShuppoBot/main"/>&nbsp;
 &nbsp;
 <a href="https://opensource.org/licenses/MIT">
-		<img src="https://img.shields.io/badge/License-MIT-green.svg" height="21" title="License" align="right">&nbsp;
+		<img src="https://img.shields.io/badge/License-MIT-green.svg" height="21" title="License" align="right"/>&nbsp;
 </a>
 	&nbsp;
 <a href="https://discord.gg/yjy2F9YWWG">
