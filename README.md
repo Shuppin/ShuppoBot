@@ -1,17 +1,20 @@
 
 <!-- Badges -->
-<p align="right">
-	<a href="https://opensource.org/licenses/MIT">
-		<img src="https://img.shields.io/badge/License-MIT-green.svg" height="21" title="License">
-	</a>
-	  &nbsp;
-	<a href="https://discord.gg/yjy2F9YWWG">
-		<img src="https://img.shields.io/discord/953217201496793108?label=Discord" height="21" title="Discord"/>
-  </a>
-    &nbsp;
-    <img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103" height="21" title="Open Source"/>
-    &nbsp;
-</p>
+
+<img src="https://badgen.net/github/commits/Shuppin/ShuppoBot/main">
+<img src="https://badgen.net/github/last-commit/Shuppin/ShuppoBot/main">
+<a href="https://opensource.org/licenses/MIT">
+		<img src="https://img.shields.io/badge/License-MIT-green.svg" height="21" title="License" align="right">&nbsp;
+</a>
+	&nbsp;
+<a href="https://discord.gg/yjy2F9YWWG">
+		<img src="https://badgen.net/discord/members/yjy2F9YWWG" height="21" title="Discord" align="right"/>
+</a>
+  &nbsp;
+<a href="https://discord.gg/yjy2F9YWWG">
+    <img src="https://badges.frapsoft.com/os/v2/open-source.svg?v=103" height="21" title="Open Source" align="right"/>
+</a>
+  &nbsp;
 
 # Shuppo Bot
 
