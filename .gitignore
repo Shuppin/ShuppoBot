@@ -1,0 +1,10 @@
+*.json
+**/*.json
+**/__pychache__
+*.py[cod]
+*$py.class
+*.disabled
+**/*.disabled
+*.lock
+*.toml
+**/secrets.py
